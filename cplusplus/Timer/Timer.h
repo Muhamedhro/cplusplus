@@ -35,7 +35,7 @@ public:
 	Timer();
 	~Timer();
 
-	void GetCurrentTime();
+	size_t GetCurrentTime();
 
 	TimerState GetCurrentState() const;
 	size_t GetTimerId() const;

@@ -33,7 +33,7 @@ void Timer::Stop()
 	{
 		t2 = chrono::high_resolution_clock::now();
 		auto elapsedTimeMs = chrono::duration_cast<chrono::milliseconds>(t2 - t1);
-		cout << "Timer stopped. Time elapsed: " << elapsedTimeMs.count() << endl;
+		cout << "Timer with id " << _id << " stopped. Time elapsed (ms) : " << elapsedTimeMs.count() << endl;
 		_currentState = TimerState::NOT_RUNNING;
 	}
 	else
@@ -48,17 +48,18 @@ void Timer::Restart()
 	cout << "Restarted timer with id: " << _id << endl;
 }
 
-void Timer::GetCurrentTime()
+size_t Timer::GetCurrentTime()
 {
 	if (_currentState == TimerState::RUNNING)
 	{
 		t2 = chrono::high_resolution_clock::now();
 		auto elapsedTimeMs = chrono::duration_cast<chrono::milliseconds>(t2 - t1);
-		cout << "Time elapsed (ms): " << elapsedTimeMs.count() << endl;
+		return elapsedTimeMs.count();
 	}
 	else
 	{
-		cout << "Timer with id: " << _id << " not Running!" << endl;
+		cout << "Timer with id " << _id << " not Running! Returning -1" << endl;
+		return -1;
 	}
 }
 
@@ -78,7 +79,7 @@ void Timer::DoTimerOperation(TimerOperations timerOperation)
 	}
 	else
 	{
-		cout << "No valid operation for timer with id: " << this->_id << '\n';
+		cout << "No valid operation for timer with id: " << _id << '\n';
 	}
 }
 

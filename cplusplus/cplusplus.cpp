@@ -7,27 +7,20 @@
 #include <string>
 
 #include "Timer/Timer.h"
+#include "Fibonacci/Fibonacci.h"
+#include "Loops/LoopParalellism.h"
 
 using namespace std;
 
 int main()
 {
-	Timer t;
-	t.DoTimerOperation(TimerOperations::START);
-	t.PrintTimerState();
+	Fibonacci fib;
+	fib.DoFibonacciBenchmark();
 
-	Timer t2;
-	t2.DoTimerOperation(TimerOperations::START);
-	t2.PrintTimerState();
+	LoopParalellism lp;
+	lp.DoLoopBenchmark();
 
-	Timer t3;
-	t3.DoTimerOperation(TimerOperations::START);
-	t3.PrintTimerState();
-
-	Timer t4;
-	t4.DoTimerOperation(TimerOperations::START);
-	t4.PrintTimerState();
-
+	cout << "Press enter to exit" << endl;
 	cin.get();
 	return 0;
 }

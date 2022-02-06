@@ -12,7 +12,7 @@
 
 # =============================================================================
 # Project: cplusplus
-# Configurations: Debug
+# Configurations: RelWithDebInfo
 # =============================================================================
 
 #############################################
@@ -24,7 +24,7 @@ ninja_required_version = 1.5
 #############################################
 # Set configuration variable for custom commands.
 
-CONFIGURATION = Debug
+CONFIGURATION = RelWithDebInfo
 # =============================================================================
 # Include auxiliary files.
 
@@ -43,24 +43,31 @@ include CMakeFiles\rules.ninja
 
 build cmake_object_order_depends_target_cplusplus: phony || CMakeFiles\cplusplus.dir
 
-build CMakeFiles\cplusplus.dir\cplusplus.cpp.obj: CXX_COMPILER__cplusplus_Debug ..\..\..\cplusplus.cpp || cmake_object_order_depends_target_cplusplus
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+build CMakeFiles\cplusplus.dir\cplusplus.cpp.obj: CXX_COMPILER__cplusplus_RelWithDebInfo ..\..\..\cplusplus.cpp || cmake_object_order_depends_target_cplusplus
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /Zi /O2 /Ob1 /DNDEBUG
   OBJECT_DIR = CMakeFiles\cplusplus.dir
   OBJECT_FILE_DIR = CMakeFiles\cplusplus.dir
   TARGET_COMPILE_PDB = CMakeFiles\cplusplus.dir\
   TARGET_PDB = cplusplus.pdb
 
-build CMakeFiles\cplusplus.dir\Timer\Timer.cpp.obj: CXX_COMPILER__cplusplus_Debug ..\..\..\Timer\Timer.cpp || cmake_object_order_depends_target_cplusplus
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+build CMakeFiles\cplusplus.dir\Timer\Timer.cpp.obj: CXX_COMPILER__cplusplus_RelWithDebInfo ..\..\..\Timer\Timer.cpp || cmake_object_order_depends_target_cplusplus
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /Zi /O2 /Ob1 /DNDEBUG
   OBJECT_DIR = CMakeFiles\cplusplus.dir
   OBJECT_FILE_DIR = CMakeFiles\cplusplus.dir\Timer
   TARGET_COMPILE_PDB = CMakeFiles\cplusplus.dir\
   TARGET_PDB = cplusplus.pdb
 
-build CMakeFiles\cplusplus.dir\Fibonacci\Fibonacci.cpp.obj: CXX_COMPILER__cplusplus_Debug ..\..\..\Fibonacci\Fibonacci.cpp || cmake_object_order_depends_target_cplusplus
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+build CMakeFiles\cplusplus.dir\Fibonacci\Fibonacci.cpp.obj: CXX_COMPILER__cplusplus_RelWithDebInfo ..\..\..\Fibonacci\Fibonacci.cpp || cmake_object_order_depends_target_cplusplus
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /Zi /O2 /Ob1 /DNDEBUG
   OBJECT_DIR = CMakeFiles\cplusplus.dir
   OBJECT_FILE_DIR = CMakeFiles\cplusplus.dir\Fibonacci
+  TARGET_COMPILE_PDB = CMakeFiles\cplusplus.dir\
+  TARGET_PDB = cplusplus.pdb
+
+build CMakeFiles\cplusplus.dir\Loops\LoopParalellism.cpp.obj: CXX_COMPILER__cplusplus_RelWithDebInfo ..\..\..\Loops\LoopParalellism.cpp || cmake_object_order_depends_target_cplusplus
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /Zi /O2 /Ob1 /DNDEBUG
+  OBJECT_DIR = CMakeFiles\cplusplus.dir
+  OBJECT_FILE_DIR = CMakeFiles\cplusplus.dir\Loops
   TARGET_COMPILE_PDB = CMakeFiles\cplusplus.dir\
   TARGET_PDB = cplusplus.pdb
 
@@ -72,8 +79,8 @@ build CMakeFiles\cplusplus.dir\Fibonacci\Fibonacci.cpp.obj: CXX_COMPILER__cplusp
 #############################################
 # Link the executable cplusplus.exe
 
-build cplusplus.exe: CXX_EXECUTABLE_LINKER__cplusplus_Debug CMakeFiles\cplusplus.dir\cplusplus.cpp.obj CMakeFiles\cplusplus.dir\Timer\Timer.cpp.obj CMakeFiles\cplusplus.dir\Fibonacci\Fibonacci.cpp.obj
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+build cplusplus.exe: CXX_EXECUTABLE_LINKER__cplusplus_RelWithDebInfo CMakeFiles\cplusplus.dir\cplusplus.cpp.obj CMakeFiles\cplusplus.dir\Timer\Timer.cpp.obj CMakeFiles\cplusplus.dir\Fibonacci\Fibonacci.cpp.obj CMakeFiles\cplusplus.dir\Loops\LoopParalellism.cpp.obj
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /Zi /O2 /Ob1 /DNDEBUG
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
   LINK_LIBRARIES = kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
   OBJECT_DIR = CMakeFiles\cplusplus.dir
@@ -89,7 +96,7 @@ build cplusplus.exe: CXX_EXECUTABLE_LINKER__cplusplus_Debug CMakeFiles\cplusplus
 # Utility command for edit_cache
 
 build CMakeFiles\edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\PROJECTJES\cplusplus\cplusplus\out\build\x64-Debug && "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  COMMAND = cmd.exe /C "cd /D C:\PROJECTJES\cplusplus\cplusplus\out\build\x64-Release && "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -100,7 +107,7 @@ build edit_cache: phony CMakeFiles\edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\PROJECTJES\cplusplus\cplusplus\out\build\x64-Debug && "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" --regenerate-during-build -SC:\PROJECTJES\cplusplus\cplusplus -BC:\PROJECTJES\cplusplus\cplusplus\out\build\x64-Debug"
+  COMMAND = cmd.exe /C "cd /D C:\PROJECTJES\cplusplus\cplusplus\out\build\x64-Release && "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" --regenerate-during-build -SC:\PROJECTJES\cplusplus\cplusplus -BC:\PROJECTJES\cplusplus\cplusplus\out\build\x64-Release"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -118,7 +125,7 @@ build cplusplus: phony cplusplus.exe
 # =============================================================================
 
 #############################################
-# Folder: C:/PROJECTJES/cplusplus/cplusplus/out/build/x64-Debug
+# Folder: C:/PROJECTJES/cplusplus/cplusplus/out/build/x64-Release
 
 build all: phony cplusplus.exe
 
